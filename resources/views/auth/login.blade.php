@@ -57,7 +57,7 @@
                 <li class="nav-item">
                   <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/dashboard.html">
                     <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
-                    About
+                    Leaderboard
                   </a>
                 </li>
               </ul>             
@@ -115,7 +115,7 @@
               <div class="position-relative h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center" style="background-image: url('https://images.unsplash.com/photo-1614854262318-831574f15f1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
           background-size: cover;">
                 <span class="mask opacity-6"></span>
-                <h4 class="mt-5 text-white font-weight-bolder position-relative">Inovindo Lead keren</h4>
+                <h4 class="mt-5 text-white font-weight-bolder position-relative">Inovindo Lead</h4>
                 <p class="text-white position-relative"></p>
               </div>  
             </div>
