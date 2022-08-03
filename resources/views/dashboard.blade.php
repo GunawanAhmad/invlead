@@ -6,9 +6,64 @@
   </div>
   <div class="card mt-4">
     <div class="card-body">
-      <h6 class="mb-0">Penawaran Hari Ini</h6>
+      <h6 class="mb-0">Leaderboard for This Week</h6>
       @if(auth()->user()->gender == 'male')
-        Beli sabun wajah dengan diskon 50% melalui Smart Banking!
+        Here's the top 3 of the week !
+      @endif
+      @if(auth()->user()->gender == 'female')
+        Beli <i>skincare</i> dengan diskon 40% melalui Smart Banking!
+      @endif
+    </div>
+  </div>
+  <div class="card mt-0">
+    <div class="card-body">
+      <h6 class="mb-1">Jason Susanto</h6>
+      @if(auth()->user()->gender == 'male')
+        SMK 7 Baleendah
+      @endif
+      @if(auth()->user()->gender == 'female')
+        Beli <i>skincare</i> dengan diskon 40% melalui Smart Banking!
+      @endif
+    </div>
+  </div>
+  <div class="card mt-0">
+    <div class="card-body">
+      <h6 class="mb-1">Jason Susanto</h6>
+      @if(auth()->user()->gender == 'male')
+        SMK 7 Baleendah
+      @endif
+      @if(auth()->user()->gender == 'female')
+        Beli <i>skincare</i> dengan diskon 40% melalui Smart Banking!
+      @endif
+    </div>
+  </div>
+  <div class="card mt-0">
+    <div class="card-body">
+      <h6 class="mb-1">Jason Susanto</h6>
+      @if(auth()->user()->gender == 'male')
+        SMK 7 Baleendah
+      @endif
+      @if(auth()->user()->gender == 'female')
+        Beli <i>skincare</i> dengan diskon 40% melalui Smart Banking!
+      @endif
+    </div>
+  </div>
+  <div class="card mt-0">
+    <div class="card-body">
+      <h6 class="mb-1">Jason Susanto</h6>
+      @if(auth()->user()->gender == 'male')
+        SMK 7 Baleendah
+      @endif
+      @if(auth()->user()->gender == 'female')
+        Beli <i>skincare</i> dengan diskon 40% melalui Smart Banking!
+      @endif
+    </div>
+  </div>
+  <div class="card mt-0">
+    <div class="card-body">
+      <h6 class="mb-1">Jason Susanto</h6>
+      @if(auth()->user()->gender == 'male')
+        SMK 7 Baleendah
       @endif
       @if(auth()->user()->gender == 'female')
         Beli <i>skincare</i> dengan diskon 40% melalui Smart Banking!

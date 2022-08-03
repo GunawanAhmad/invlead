@@ -14,7 +14,7 @@
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Dashboard</span>
+            <span class="nav-link-text ms-1">Home</span>
           </a>
         </li>
         <li class="nav-item">
@@ -22,7 +22,7 @@
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Info Rekening</span>
+            <span class="nav-link-text ms-1">Daftar Peserta</span>
           </a>
         </li>
         <li class="nav-item">
@@ -30,30 +30,14 @@
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Transfer</span>
+            <span class="nav-link-text ms-1">Penilaian</span>
           </a>
         </li>        <li class="nav-item">
           <a class="nav-link {{ $path == 'pembayaran' ? 'active' : '' }}" href="{{ url('pembayaran') }}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Pembayaran</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {{ $path == 'pembelian' ? 'active' : '' }}" href="{{ url('pembelian') }}">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Pembelian</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {{ $path == 'bantuan' ? 'active' : '' }}" href="{{ url('bantuan') }}">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Bantuan</span>
+            <span class="nav-link-text ms-1">Absensi</span>
           </a>
         </li>
         <!-- <li class="nav-item">
