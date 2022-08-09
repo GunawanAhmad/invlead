@@ -36,16 +36,16 @@
                       1
                     </td>
                     <td>
-                      Dakota Rice
+                      Maswan
                     </td>
                     <td>
-                      Niger
+                    <input type="checkbox" name="hadir" value="Nonton"> Hadir<br>
                     </td>
                     <td>
-                      Oud-Turnhout
+                    <input type="checkbox" name="hadir" value="Nonton"> izin<br>
                     </td>
-                    <td class="text-primary">
-                      $36,738
+                    <td>
+                    <input type="checkbox" name="hadir" value="Nonton"> alfa<br>
                     </td>
                   </tr>
                   <tr>
@@ -53,16 +53,16 @@
                       2
                     </td>
                     <td>
-                      Minerva Hooper
+                      Syafiq
                     </td>
                     <td>
-                      Curaçao
+                    <input type="checkbox" name="hadir" value="Nonton"> Hadir<br>
                     </td>
                     <td>
-                      Sinaai-Waas
+                    <input type="checkbox" name="hadir" value="Nonton"> izin<br>
                     </td>
-                    <td class="text-primary">
-                      $23,789
+                    <td>
+                    <input type="checkbox" name="hadir" value="Nonton"> alfa<br>
                     </td>
                   </tr>
                   <tr>
@@ -70,67 +70,16 @@
                       3
                     </td>
                     <td>
-                      Sage Rodriguez
+                      Fauzaan
                     </td>
                     <td>
-                      Netherlands
+                    <input type="checkbox" name="hadir" value="Nonton"> Hadir<br>
                     </td>
                     <td>
-                      Baileux
-                    </td>
-                    <td class="text-primary">
-                      $56,142
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      4
+                    <input type="checkbox" name="hadir" value="Nonton"> izin<br>
                     </td>
                     <td>
-                      Philip Chaney
-                    </td>
-                    <td>
-                      Korea, South
-                    </td>
-                    <td>
-                      Overland Park
-                    </td>
-                    <td class="text-primary">
-                      $38,735
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      5
-                    </td>
-                    <td>
-                      Doris Greene
-                    </td>
-                    <td>
-                      Malawi
-                    </td>
-                    <td>
-                      Feldkirchen in Kärnten
-                    </td>
-                    <td class="text-primary">
-                      $63,542
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      6
-                    </td>
-                    <td>
-                      Mason Porter
-                    </td>
-                    <td>
-                      Chile
-                    </td>
-                    <td>
-                      Gloucester
-                    </td>
-                    <td class="text-primary">
-                      $78,615
+                    <input type="checkbox" name="hadir" value="Nonton"> alfa<br>
                     </td>
                   </tr>
                 </tbody>
