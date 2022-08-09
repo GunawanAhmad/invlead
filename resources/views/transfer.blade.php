@@ -1,79 +1,101 @@
 @include('base.start', ['path' => 'transfer', 'title' => 'Transfer', 'breadcrumbs' => ['Transfer']])
-  <div class="card">
-    <div class="card-body pt-4 p-3">
-      @if (session('success'))
-        <div class="alert alert-success text-white">
-          <div>
-            {{ session('success') }}
-          </div>
-          <div>
-            <ul>
-              <li>
-                ID transaksi: {{ session('transaction')->id }}
-              </li>
-              <li>Tanggal transaksi: {{ session('transaction')->created_at }}</li>
-              <li>Rekening tujuan transaksi: {{ session('transaction')->targetAccount->id }}</li>
-              <li>Pemilik tujuan transaksi: {{ session('transaction')->targetAccount->owner->fullname }}</li>
-            </ul>
-          </div>
-          
-        </div>
-      @endif
-      @if ($errors->any())
-        <div class="alert alert-danger text-white">
-          <ul>
-            @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-            @endforeach
-          </ul>
-        </div>
-      @endif
-      <form action="{{ route('store transfer') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="example-text-input" class="form-control-label">No rekening tujuan</label>
-              <input class="form-control" type="number" name="target_account_id" required>
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title ">Penilaian</h4>
+            <p class="card-category"> Penilaian Peserta Magang PT.Inovindo Digital Media</p>
+          </div
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>
+                    Nama
+                  </th>
+                  <th>
+                    Task 1
+                  </th>
+                  <th>
+                    Task 2
+                  </th>
+                  <th>
+                    Task 3
+                  </th>
+                  <th>
+                  Jumlah Poin
+                  </th>
+                  <th>
+                    lihat profil
+                  </th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      Maswan
+                    </td>
+                    <td>
+                    <input class="form-control" type="number" name="task1" required>
+                    </td>
+                    <td>
+                    <input class="form-control" type="number" name="task2" required>
+                    </td>
+                    <td>
+                    <input class="form-control" type="number" name="task3" required>
+                    </td>
+                    <td>
+                      320
+                    </td>
+                    <td>
+                    <button type="button" class="btn btn-warning" name="berinilai">Berinilai</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Syafiq
+                    </td>
+                    <td>
+                    <input class="form-control" type="number" name="task1" required>
+                    </td>
+                    <td>
+                    <input class="form-control" type="number" name="task2" required>
+                    </td>
+                    <td>
+                    <input class="form-control" type="number" name="task3" required>
+                    </td>
+                    <td>
+                      320
+                    </td>
+                    <td>
+                    <button type="button" class="btn btn-warning" name="berinilai">Berinilai</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Fauzaan
+                    </td>
+                    <td>
+                    <input class="form-control" type="number" name="task1" required>
+                    </td>
+                    <td>
+                    <input class="form-control" type="number" name="task2" required>
+                    </td>
+                    <td>
+                    <input class="form-control" type="number" name="task3" required>
+                    </td>
+                    <td>
+                      320
+                    </td>
+                    <td>
+                    <button type="button" class="btn btn-warning" name="berinilai">Berinilai</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="example-text-input" class="form-control-label">Jumlah</label>
-              <input class="form-control" type="number" name="amount"required>
-            </div>
-          </div>
-        </div>    
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <input class="btn btn-primary form-control" type="submit" value="Submit">
-            </div>
-          </div>
-        </div>   
-      </form>
-    </div>
-  </div>
-  <script>
-    $('#role-santri').click(() =>
-    {
-      if($('#role-santri').is(':checked'))
-      {
-        $('#santri-data-section').show();
-
-        $('[name="angkatan"').attr('required', true);
-        $('[name="nis"').attr('required', true);
-      }
-      else
-      {
-        $('#santri-data-section').hide();
-
-        $('[name="angkatan"').attr('required', false);
-        $('[name="nis"').attr('required', false);
-      }
-    });
-  </script>
+      </div>
 @include('base.end')
