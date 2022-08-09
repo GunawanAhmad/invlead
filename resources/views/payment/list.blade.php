@@ -88,5 +88,7 @@
           </div>
         </div>
       </div>
-
+      <div class="submit">
+      <button type="button" class="btn btn-warning" name="submit" >submit</button>
+      </div>
 @include('base.end')

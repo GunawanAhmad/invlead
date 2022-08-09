@@ -24,9 +24,6 @@
                   <th>
                     Jumlah poin
                   </th>
-                  <th>
-                    lihat
-                  </th>
                 </thead>
                 <tbody>
                   <tr>
