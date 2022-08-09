@@ -15,9 +15,9 @@
       @endif
     </div>
   </div>
-  <div class="card mt-0">
-    <div class="card-body">
-      <h6 class="mb-1">Jason Susanto</h6>
+  <div Style="Background-color: #5350FF" class="card mt-1">
+    <div style="color:white" class="card-body">
+      <h6 style="color:white" class="mb-1">Jason Susanto</h6>
       @if(auth()->user()->gender == 'male')
         SMK 7 Baleendah
       @endif
@@ -26,9 +26,9 @@
       @endif
     </div>
   </div>
-  <div class="card mt-0">
-    <div class="card-body">
-      <h6 class="mb-1">Jason Susanto</h6>
+  <div Style="Background-color: #5350FF" class="card mt-1">
+    <div style="color:white" class="card-body">
+      <h6 style="color:white" class="mb-1">Jason Susanto</h6>
       @if(auth()->user()->gender == 'male')
         SMK 7 Baleendah
       @endif
@@ -37,9 +37,9 @@
       @endif
     </div>
   </div>
-  <div class="card mt-0">
-    <div class="card-body">
-      <h6 class="mb-1">Jason Susanto</h6>
+  <div Style="Background-color: #5350FF" class="card mt-1">
+    <div style="color:white" class="card-body">
+      <h6 style="color:white" class="mb-1">Jason Susanto</h6>
       @if(auth()->user()->gender == 'male')
         SMK 7 Baleendah
       @endif
@@ -48,9 +48,9 @@
       @endif
     </div>
   </div>
-  <div class="card mt-0">
-    <div class="card-body">
-      <h6 class="mb-1">Jason Susanto</h6>
+  <div Style="Background-color: #5350FF" class="card mt-1">
+    <div style="color:white" class="card-body">
+      <h6 style="color:white" class="mb-1">Jason Susanto</h6>
       @if(auth()->user()->gender == 'male')
         SMK 7 Baleendah
       @endif
@@ -59,9 +59,9 @@
       @endif
     </div>
   </div>
-  <div class="card mt-0">
-    <div class="card-body">
-      <h6 class="mb-1">Jason Susanto</h6>
+  <div Style="Background-color: #5350FF" class="card mt-1">
+    <div style="color:white" class="card-body">
+      <h6 style="color:white" class="mb-1">Jason Susanto</h6>
       @if(auth()->user()->gender == 'male')
         SMK 7 Baleendah
       @endif
