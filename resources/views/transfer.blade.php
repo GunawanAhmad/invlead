@@ -9,6 +9,8 @@
             <p class="card-category"> Penilaian Peserta Magang PT.Inovindo Digital Media</p>
 </div>
           <div class="card-body">
+          <button type="button" class="btn btn-secondary">Penilaian Kinerja</button>
+          <button type="button" class="btn btn-secondary">Penilaian Kedisiplinan</button>
             <div class="table-responsive">
               <table class="table">
                 <thead class=" text-primary">
