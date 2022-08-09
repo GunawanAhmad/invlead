@@ -8,7 +8,7 @@
     <div class="card-body">
       <h6 class="mb-0">Leaderboard for This Week</h6>
       @if(auth()->user()->gender == 'male')
-        Here's the top 3 of the week !
+        Here's the top 5 of the week !
       @endif
       @if(auth()->user()->gender == 'female')
         Beli <i>skincare</i> dengan diskon 40% melalui Smart Banking!
