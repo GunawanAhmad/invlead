@@ -49,7 +49,7 @@
                       320
                     </td>
                     <td>
-                    <button type="button" class="btn btn-warning" name="berinilai">Berinilai</button>
+                    <button type="button" class="btn btn-warning" name="berinilai">Beri nilai</button>
                     </td>
                   </tr>
                   <tr>
@@ -69,7 +69,7 @@
                       320
                     </td>
                     <td>
-                    <button type="button" class="btn btn-warning" name="berinilai">Berinilai</button>
+                    <button type="button" class="btn btn-warning" name="berinilai">Beri nilai</button>
                     </td>
                   </tr>
                   <tr>
@@ -89,7 +89,7 @@
                       320
                     </td>
                     <td>
-                    <button type="button" class="btn btn-warning" name="berinilai">Berinilai</button>
+                    <button type="button" class="btn btn-warning" name="berinilai">Beri nilai</button>
                     </td>
                   </tr>
                 </tbody>
