@@ -7,7 +7,7 @@
           <div class="card-header card-header-primary">
             <h4 class="card-title ">Daftar Peserta</h4>
             <p class="card-category"> Daftar seluruh peserta magang PT.Inovindo Digital Media</p>
-          </div
+</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
