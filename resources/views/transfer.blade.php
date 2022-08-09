@@ -37,13 +37,13 @@
                       Maswan
                     </td>
                     <td>
-                    <input class="form-control" type="number" name="task1" required>
+                    <input style="width : 2cm" class="form-control" type="number" name="task1" required>
                     </td>
                     <td>
-                    <input class="form-control" type="number" name="task2" required>
+                    <input style="width : 2cm" class="form-control" type="number" name="task2" required>
                     </td>
                     <td>
-                    <input class="form-control" type="number" name="task3" required>
+                    <input style="width : 2cm" class="form-control" type="number" name="task3" required>
                     </td>
                     <td>
                       320
@@ -57,13 +57,13 @@
                       Syafiq
                     </td>
                     <td>
-                    <input class="form-control" type="number" name="task1" required>
+                    <input style="width : 2cm" class="form-control" type="number" name="task1" required>
                     </td>
                     <td>
-                    <input class="form-control" type="number" name="task2" required>
+                    <input style="width : 2cm" class="form-control" type="number" name="task2" required>
                     </td>
                     <td>
-                    <input class="form-control" type="number" name="task3" required>
+                    <input style="width : 2cm" class="form-control" type="number" name="task3" required>
                     </td>
                     <td>
                       320
@@ -77,13 +77,13 @@
                       Fauzaan
                     </td>
                     <td>
-                    <input class="form-control" type="number" name="task1" required>
+                    <input style="width : 2cm" class="form-control" type="number" name="task1" required>
                     </td>
                     <td>
-                    <input class="form-control" type="number" name="task2" required>
+                    <input style="width : 2cm" class="form-control" type="number" name="task2" required>
                     </td>
                     <td>
-                    <input class="form-control" type="number" name="task3" required>
+                    <input style="width : 2cm" class="form-control" type="number" name="task3" required>
                     </td>
                     <td>
                       320
