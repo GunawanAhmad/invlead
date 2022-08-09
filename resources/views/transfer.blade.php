@@ -7,7 +7,7 @@
           <div class="card-header card-header-primary">
             <h4 class="card-title ">Penilaian</h4>
             <p class="card-category"> Penilaian Peserta Magang PT.Inovindo Digital Media</p>
-          </div
+</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
@@ -28,7 +28,7 @@
                   Jumlah Poin
                   </th>
                   <th>
-                    lihat profil
+                    Beri nilai
                   </th>
                 </thead>
                 <tbody>
