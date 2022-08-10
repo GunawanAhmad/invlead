@@ -1,4 +1,3 @@
-@include('base.start', ['path' => 'transfer', 'title' => 'Transfer', 'breadcrumbs' => ['Transfer']])
 <div class="content">
   <div class="container-fluid">
     <div class="row">
@@ -10,7 +9,7 @@
             </div>
           <div class="card-body">
           <button type="button" class="btn btn-secondary" name="penilaiankinerja">Penilaian Kinerja</button>
-          <button type="button" class="btn btn-secondary" name="penilaian kedisiplinan">Penilaian Kedisiplinan</button>
+          <href="kedisiplinan.blade.php" button type="button" class="btn btn-secondary" name="penilaian kedisiplinan">Penilaian Kedisiplinan</button>
             <div class="table-responsive">
               <table class="table">
                 <thead class=" text-primary">
@@ -100,4 +99,3 @@
           </div>
         </div>
       </div>
-@include('base.end')
