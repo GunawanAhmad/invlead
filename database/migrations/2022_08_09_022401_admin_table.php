@@ -11,14 +11,17 @@ return new class extends Migration
      *
      * @return void
      */
-    Schema::create('admin', function (Blueprint $table)
+    public function up()
     {
-        $table->id();
-        $table->string('nama_admin')->unique();
-        $table->timestamp('email_admin')->nullable();
-        $table->string('password_admin');
-        $table->string('username_admin');
-
+        Schema::create('admin', function (Blueprint $table)
+        {
+            $table->id();
+            $table->string('nama_admin')->unique();
+            $table->timestamp('email_admin')->nullable();
+            $table->string('password_admin');
+            $table->string('username_admin');
+    
+        });
     }
 
     /**

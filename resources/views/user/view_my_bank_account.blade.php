@@ -9,8 +9,10 @@
             <p class="card-category"> Daftar seluruh peserta magang PT.Inovindo Digital Media</p>
           </div>
           <div class="card-body">
+          <a href="http://127.0.0.1:8000/user/list/create">
           <button type="button" class="btn btn-secondary">Tambah Peserta</button>
-            <div class="table-responsive">
+          </a>
+          <div class="table-responsive">
               <table class="table">
                 <thead class=" text-primary">
                   <th>

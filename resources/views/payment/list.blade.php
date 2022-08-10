@@ -1,6 +1,6 @@
 
   
-@include('base.start', ['path' => 'pembayaran', 'title' => 'Pembayaran Tagihan', 'breadcrumbs' => ['Pembayaran']])
+@include('base.start', ['path' => 'pembayaran', 'title' => 'Absensi', 'breadcrumbs' => ['Absensi']])
 <div class="content">
   <div class="container-fluid">
     <div class="row">

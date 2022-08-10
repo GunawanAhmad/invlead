@@ -22,13 +22,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'dashboard']);
 Route::get('/profil', [App\Http\Controllers\UserController::class, 'my_profile'])->name('my profile');
 Route::get('/profil/edit', [App\Http\Controllers\UserController::class, 'edit_my_profile'])->name('edit my profile');
 Route::post('/profile/update', [App\Http\Controllers\UserController::class, 'update_my_profile'])->name('update my profile');
-Route::get('/user/list', [App\Http\Controllers\UserController::class, 'list_and_manage'])->name('user tm')->middleware('permission:view users list');
-Route::get('/user/list/create', [App\Http\Controllers\UserController::class, 'create'])->name('create user')->middleware('permission:create users');
-Route::get('/user/list/{id}', [App\Http\Controllers\UserController::class, 'view'])->name('view user')->middleware('permission:view users list');
-Route::post('/user/list/store', [App\Http\Controllers\UserController::class, 'store'])->name('store user')->middleware('permission:create users');
-Route::post('/user/list/update/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('update user')->middleware('permission:update users');
-Route::get('/user/list/edit/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('edit user')->middleware('permission:update users');
-Route::get('/user/list/delete/{id}', [App\Http\Controllers\UserController::class, 'delete'])->name('delete user')->middleware('permission:delete users');
+Route::get('/user/list', [App\Http\Controllers\UserController::class, 'list_and_manage'])->name('user tm');
+Route::get('/user/list/create', [App\Http\Controllers\UserController::class, 'create'])->name('create user');
+Route::get('/user/list/{id}', [App\Http\Controllers\UserController::class, 'view'])->name('view user');
+Route::post('/user/list/store', [App\Http\Controllers\UserController::class, 'store'])->name('store user');
+Route::post('/user/list/update/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('update user');
+Route::get('/user/list/edit/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('edit user');
+Route::get('/user/list/delete/{id}', [App\Http\Controllers\UserController::class, 'delete'])->name('delete user');
 
 Route::get('/rekening', [App\Http\Controllers\UserController::class, 'view_my_bank_account'])->name('view my bank account');
 
