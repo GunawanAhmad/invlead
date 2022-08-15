@@ -28,9 +28,9 @@
   </div>
   <div Style="Background-color: #5350FF" class="card mt-1">
     <div style="color:white" class="card-body">
-      <h6 style="color:white" class="mb-1">Jason Susanto</h6>
+      <h6 style="color:white" class="mb-1">David Sibarani</h6>
       @if(auth()->user()->gender == 'male')
-        SMK 7 Baleendah
+        SMKN 12 Bekasi Barat
       @endif
       @if(auth()->user()->gender == 'female')
         Beli <i>skincare</i> dengan diskon 40% melalui Smart Banking!
@@ -39,9 +39,9 @@
   </div>
   <div Style="Background-color: #5350FF" class="card mt-1">
     <div style="color:white" class="card-body">
-      <h6 style="color:white" class="mb-1">Jason Susanto</h6>
+      <h6 style="color:white" class="mb-1">Hamam Mulki</h6>
       @if(auth()->user()->gender == 'male')
-        SMK 7 Baleendah
+        Politeknik 8 Jakarta
       @endif
       @if(auth()->user()->gender == 'female')
         Beli <i>skincare</i> dengan diskon 40% melalui Smart Banking!
@@ -50,9 +50,9 @@
   </div>
   <div Style="Background-color: #5350FF" class="card mt-1">
     <div style="color:white" class="card-body">
-      <h6 style="color:white" class="mb-1">Jason Susanto</h6>
+      <h6 style="color:white" class="mb-1">Baiq Pratama</h6>
       @if(auth()->user()->gender == 'male')
-        SMK 7 Baleendah
+        SMK 6 Bandung
       @endif
       @if(auth()->user()->gender == 'female')
         Beli <i>skincare</i> dengan diskon 40% melalui Smart Banking!
@@ -61,9 +61,9 @@
   </div>
   <div Style="Background-color: #5350FF" class="card mt-1">
     <div style="color:white" class="card-body">
-      <h6 style="color:white" class="mb-1">Jason Susanto</h6>
+      <h6 style="color:white" class="mb-1">Nelson Bridge</h6>
       @if(auth()->user()->gender == 'male')
-        SMK 7 Baleendah
+        Universitas Veritas
       @endif
       @if(auth()->user()->gender == 'female')
         Beli <i>skincare</i> dengan diskon 40% melalui Smart Banking!
