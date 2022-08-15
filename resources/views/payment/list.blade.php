@@ -1,5 +1,3 @@
-
-  
 @include('base.start', ['path' => 'pembayaran', 'title' => 'Absensi', 'breadcrumbs' => ['Absensi']])
 <div class="content">
   <div class="container-fluid">
