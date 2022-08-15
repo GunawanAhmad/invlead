@@ -9,9 +9,10 @@
             <p class="card-category"> Daftar seluruh peserta magang PT.Inovindo Digital Media</p>
           </div>
           <div class="card-body">
-          <a href="http://127.0.0.1:8000/user/list/create">
-          <button type="button" class="btn btn-secondary">Tambah Peserta</button>
-          </a>
+          <a href="{{ route('create user') }}" class="btn btn-primary">
+          <i class="fas fa-plus" aria-hidden="true"></i>
+          Tambah Daftar peserta
+        </a>
           <div class="table-responsive">
               <table class="table">
                 <thead class=" text-primary">
@@ -26,6 +27,9 @@
                   </th>
                   <th>
                     Jumlah poin
+                  </th>
+                  <th>
+                    action
                   </th>
                 </thead>
                 <tbody>
@@ -42,9 +46,14 @@
                     <td>
                     120
                     </td>
-                    <td>
-                    <button type="button" class="btn btn-warning">Lihat Profil</button>
-                    </td>
+                    <td class="align-middle text-center text-sm">
+                  @can('delete users')
+                    <a class="btn btn-danger btn-sm mb-0" onclick="return confirm('Yakin menghapus?')">Hapus</a>
+                  @endcan
+                  @can('update users')
+                    <a class="btn btn-primary btn-sm mb-0">Ubah</a>              
+                  @endcan
+                </td>
                   </tr>
                   <tr>
                     <td>
@@ -59,9 +68,14 @@
                     <td>
                     120
                     </td>
-                    <td>
-                    <button type="button" class="btn btn-warning">Lihat Profil</button>
-                    </td>
+                    <td class="align-middle text-center text-sm">
+                  @can('delete users')
+                    <a class="btn btn-danger btn-sm mb-0" onclick="return confirm('Yakin menghapus?')">Hapus</a>
+                  @endcan
+                  @can('update users')
+                    <a class="btn btn-primary btn-sm mb-0">Ubah</a>              
+                  @endcan
+                </td>
                   </tr>
                   <tr>
                     <td>
@@ -76,9 +90,14 @@
                     <td>
                     120
                     </td>
-                    <td>
-                    <button type="button" class="btn btn-warning">Lihat Profil</button>
-                    </td>
+                    <td class="align-middle text-center text-sm">
+                  @can('delete users')
+                    <a class="btn btn-danger btn-sm mb-0" onclick="return confirm('Yakin menghapus?')">Hapus</a>
+                  @endcan
+                  @can('update users')
+                    <a class="btn btn-primary btn-sm mb-0">Ubah</a>              
+                  @endcan
+                </td>
                   </tr>
                 </tbody>
               </table>
