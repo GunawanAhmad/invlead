@@ -1,4 +1,4 @@
-@include('base.start', ['path' => 'transfer', 'title' => 'Transfer', 'breadcrumbs' => ['Transfer']])
+@include('base.start', ['path' => 'transfer', 'title' => 'Penilaian', 'breadcrumbs' => ['Penilaian']])
 <div class="content">
   <div class="container-fluid">
     <div class="row">
