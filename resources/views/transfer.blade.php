@@ -122,13 +122,13 @@
                                             Nama
                                         </th>
                                         <th>
-                                            Task 1
+                                            Disiplin
                                         </th>
                                         <th>
-                                            Task 2
+                                            Sopan
                                         </th>
                                         <th>
-                                            Task 3
+                                            Santun
                                         </th>
                                         <th>
                                             Jumlah Poin

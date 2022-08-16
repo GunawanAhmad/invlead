@@ -1,4 +1,4 @@
-@include('base.start', ['path' => 'user/list', 'title' => 'Tambah User', 'breadcrumbs' => ['Daftar User', 'Tambah User']
+@include('base.start', ['path' => 'user/list', 'title' => 'Tambah Peserta', 'breadcrumbs' => ['Daftar Peserta', 'Tambah Peserta']
   ,'backRoute' => url()->previous() ? url()->previous() : route('user tm')
 ])
   <div class="card">
@@ -44,28 +44,19 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label for="example-text-input" class="form-control-label">No telp</label>
-              <input class="form-control" type="number" name="phone_number" placeholder="Contoh: user@example.com" required>
+              <label for="example-text-input" class="form-control-label">Asal Sekolah</label>
+              <input class="form-control" type="text" name="fullname" required>
             </div>
           </div>
         </div>    
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label for="example-text-input" class="form-control-label">Email</label>
-              <input class="form-control" type="email" name="email" placeholder="Contoh: user@example.com" required>
-            </div>
-          </div>
-        </div>    
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="example-text-input" class="form-control-label">Password</label>
-              <input class="form-control" type="password" name="password" placeholder="Contoh: Pengajian Maghrib" required>
+              <label for="example-text-input" class="form-control-label">Alamat Rumah</label>
+              <input class="form-control" type="text" name="fullname" required>
             </div>
           </div>
         </div>
-
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">

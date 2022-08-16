@@ -8,7 +8,7 @@
             <h4 class="card-title ">Absensi</h4>
             <p class="card-category"> Absensi Peserta Magang Inovindo Digital Media</p>
           </div>
-          <input type="date" class="form-control" name="tanggal" value=tanggal style="width :4cm " >
+          <input type="date" class="form-control" name="tanggal" value=tanggal style="margin-left:0.5cm ; width : 4cm" >
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">

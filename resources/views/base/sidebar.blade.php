@@ -32,7 +32,8 @@
             </div>
             <span class="nav-link-text ms-1">Penilaian</span>
           </a>
-        </li>        <li class="nav-item">
+        </li>        
+        <li class="nav-item">
           <a class="nav-link {{ $path == 'pembayaran' ? 'active' : '' }}" href="{{ url('pembayaran') }}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
@@ -48,7 +49,7 @@
             <span class="nav-link-text ms-1">Laporan Umum</span>
           </a>
         </li> -->        
-        @can('view users list')
+        {{-- @can('view users list')
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">User</h6>
         </li>
@@ -60,7 +61,7 @@
               <span class="nav-link-text ms-1">Daftar User</span>
             </a>
           </li>
-        @endcan
+        @endcan --}}
       </ul>
     </div>
     <div class="sidenav-footer mx-3 ">
