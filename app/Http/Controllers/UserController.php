@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\BankAccount;
 use App\Models\MerchantProduct;
 use App\Models\MerchantPaymentInvoice;
+use App\Models\Peserta;
 use App\Models\Transaction;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
@@ -230,11 +231,11 @@ class UserController extends Controller
         return redirect()->route('user tm')->with('success', 'Berhasil menghapus user');
     }
 
-    public function view_my_bank_account()
+    public function get_peserta()
     {
-        $bankAccount = auth()->user()->bankAccount;
+        $peserta = Peserta::all();
 
-        return view('user.view_my_bank_account', ['bankAccount' => $bankAccount]);
+        return view('user.daftar_peserta', ['pesertas' => $peserta]);
     }
 
     public function transfer()
@@ -242,99 +243,9 @@ class UserController extends Controller
         return view('transfer');
     }
 
-    public function store_transfer(Request $request)
-    {
-        $request->validate([
-            'target_account_id' => 'required|integer|exists:bank_accounts,id',
-            'amount' => 'required|integer',
-        ]);
+    
 
-        $targetBankAccount = BankAccount::find($request->input('target_account_id'));
-        $sourceBankAccount = auth()->user()->bankAccount;
-        
-        if($sourceBankAccount->balance < $request->input('amount'))
-            return redirect()->route('transfer')->withErrors(['Saldo tidak cukup.']);
+    
 
-        // start transaction
-
-        // add to target
-        $targetBankAccount->balance = $targetBankAccount->balance + $request->input('amount');
-        $updated1 = $targetBankAccount->save();
-
-        // reduce from source
-        $sourceBankAccount->balance = $sourceBankAccount->balance - $request->input('amount');
-        $updated2 = $sourceBankAccount->save();
-        
-        // create transaction
-        $insertedTransaction = Transaction::create([
-            'source_account_id' => $sourceBankAccount->id,
-            'target_account_id' => $request->input('target_account_id'),
-            'amount' => $request->input('amount'),
-        ]);
-
-        if(!$updated1 && !$updated2 && !$insertedTransaction)
-            return redirect()->route('transfer')->withErrors(['Gagal mentransfer.']);
-
-        return redirect()->route('transfer')->with(['success' => 'Berhasil mentransfer.', 'transaction' => $insertedTransaction]);
-    }
-
-    public function list_payment()
-    {
-        $merchantProducts = MerchantProduct::where('type', 'payment')->get();
-
-        return view('payment.list', ['merchantProducts' => $merchantProducts]);
-    }
-
-    public function view_payment($id)
-    {
-        $merchantProduct = MerchantProduct::find($id);
-
-        return view('payment.view', ['merchantProduct' => $merchantProduct]);
-    }
-
-    public function payment_confirmation($id)
-    {
-        $invoice = MerchantPaymentInvoice::find($id);
-
-        return view('payment.confirm', ['invoice' => $invoice]);
-    }
-
-    public function payment_confirmation_sender(Request $request)
-    {
-        $invoice = MerchantPaymentInvoice::where('code', $request->input('code'))->first();
-
-        return redirect('/pembayaran/confirm/' . $invoice->id);
-    }
-
-    public function payment_confirmation_store(Request $request)
-    {
-        $invoice = MerchantPaymentInvoice::find($request->input('id'));
-
-        // start transaction
-        $targetBankAccount = $invoice->merchantProduct->merchant->owner->bankAccount;
-        $sourceBankAccount = auth()->user()->bankAccount;
-
-        if($sourceBankAccount->balance < $invoice->price)
-            return redirect()->route('view payment', $invoice->merchantProduct->id)->withErrors(['Saldo tidak cukup.']);
-
-        // add to target
-        $targetBankAccount->balance = $targetBankAccount->balance + $invoice->price;
-        $updated1 = $targetBankAccount->save();
-
-        // reduce from source
-        $sourceBankAccount->balance = $sourceBankAccount->balance - $invoice->price;
-        $updated2 = $sourceBankAccount->save();
-        
-        // create transaction
-        $insertedTransaction = Transaction::create([
-            'source_account_id' => $sourceBankAccount->id,
-            'target_account_id' => $targetBankAccount->id,
-            'amount' => $invoice->price,
-        ]);
-
-        if(!$insertedTransaction)
-            return redirect()->route('view payment', $invoice->merchantProduct->id)->withErrors(['Gagal membayar.']);
-
-        return redirect()->route('view payment', $invoice->merchantProduct->id)->with('success', 'Berhasil melakukan pembayaran.');
-    }
+    
 }

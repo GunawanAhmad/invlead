@@ -1,7 +1,7 @@
 @include('base.start', [
-    'path' => 'user/list',
-    'title' => 'Tambah Peserta',
-    'breadcrumbs' => ['Daftar Peserta', 'Tambah Peserta'],
+    'path' => 'edit',
+    'title' => 'Edit Peserta',
+    'breadcrumbs' => ['Daftar Peserta', 'Edit Peserta'],
     'backRoute' => url()->previous() ? url()->previous() : route('user tm'),
 ])
 <div class="card">
@@ -15,13 +15,14 @@
                 </ul>
             </div>
         @endif
-        <form action="{{ route('tambah peserta') }}" method="POST" enctype="multipart/form-data">
+        <form action="/edit_peserta/{{ $peserta->id }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="example-text-input" class="form-control-label">Nama Lengkap</label>
-                        <input class="form-control" type="text" name="nama_peserta" required>
+                        <input class="form-control" type="text" value="{{ $peserta->nama_peserta }}"
+                            name="nama_peserta" required>
                     </div>
                 </div>
             </div>
@@ -29,9 +30,11 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="example-text-input" class="form-control-label">Jenis Kelamin</label>
-                        <select class="form-control" name="jenis_kelamin" required>
-                            <option value="perempuan">Perempuan</option>
-                            <option value="laki-laki">Laki-laki</option>
+                        <select value="{{ $peserta->jenis_kelamin }}"class="form-control" name="jenis_kelamin" required>
+                            <option value="perempuan" {{ $peserta->jenis_kelamin == 'perempuan' ? 'selected' : '' }}>
+                                Perempuan</option>
+                            <option value="laki-laki" {{ $peserta->jenis_kelamin == 'laki-laki' ? 'selected' : '' }}>
+                                Laki-laki</option>
                         </select>
                     </div>
                 </div>
@@ -40,7 +43,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="example-text-input" class="form-control-label">Tanggal lahir</label>
-                        <input class="form-control" type="date" name="tgl_lahir"
+                        <input class="form-control" type="date" value="{{ $peserta->tgl_lahir }}" name="tgl_lahir"
                             placeholder="Contoh: Pengajian Maghrib" required>
                     </div>
                 </div>
@@ -49,7 +52,8 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="example-text-input" class="form-control-label">Asal Sekolah</label>
-                        <input class="form-control" type="text" name="asal_sekolah" required>
+                        <input class="form-control" value="{{ $peserta->asal_sekolah }}" type="text"
+                            name="asal_sekolah" required>
                     </div>
                 </div>
             </div>
@@ -57,7 +61,8 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="example-text-input" class="form-control-label">Alamat Rumah</label>
-                        <input class="form-control" type="text" name="alamat_rumah" required>
+                        <input class="form-control" value="{{ $peserta->alamat_rumah }}" type="text"
+                            name="alamat_rumah" required>
                     </div>
                 </div>
             </div>

@@ -13,7 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('absensis', function (Blueprint $table)
+        {
+            $table->id();
+            $table->foreignId('id_peserta');
+            $table->foreign('id_peserta')->references('id')->on('pesertas');
+            $table->string('tanggal');
+            $table->string('status_kehadiran');
+
+        });
     }
 
     /**
