@@ -24,10 +24,15 @@ class PesertaController extends Controller
         return view('user.daftar_peserta', ['pesertas' => $peserta]);
     }
 
-    public function penilaian_view()
-    {
+    public function penilaian_view(Request $request)
+    {   
+        if($request->has('tab')) {
+            $tab = $request->query('tab');
+        } else {
+            $tab = 'kinerja';
+        }
         $pesertas = Peserta::all();
-        return view('penilaian', ['pesertas' => $pesertas]);
+        return view('penilaian', ['pesertas' => $pesertas, 'tab' => $tab]);
     }
     
     public function absensi_view(Request $request)
