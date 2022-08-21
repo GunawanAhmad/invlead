@@ -17,7 +17,7 @@ return new class extends Migration
         {
             $table->id();
             $table->foreignId('id_peserta');
-            $table->foreign('id_peserta')->references('id')->on('pesertas');
+            $table->foreign('id_peserta')->references('id')->on('pesertas')->onDelete('cascade');
             $table->string('tanggal');
             $table->string('status_kehadiran');
             $table->timestamps();

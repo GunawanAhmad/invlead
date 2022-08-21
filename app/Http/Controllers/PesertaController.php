@@ -63,7 +63,7 @@ class PesertaController extends Controller
     public function hapus_peserta(Request $request) {
         try {
             $id = $request->id;
-            $peserta = Peserta::find($id);
+            $peserta = Peserta::findOrFail($id);
             $peserta->delete();
             return redirect('/peserta');
         } catch (\Throwable $th) {
@@ -75,7 +75,7 @@ class PesertaController extends Controller
     public function edit_peserta_view(Request $request) {
         try {
             $id = $request->id;
-            $peserta = Peserta::find($id);
+            $peserta = Peserta::findOrFail($id);
             return view('user.edit_peserta', ['peserta' => $peserta]);
         } catch (\Throwable $th) {
             //throw $th;
@@ -86,7 +86,7 @@ class PesertaController extends Controller
     public function edit_peserta(Request $request) {
         try {
             $id = $request->id;
-            $peserta = Peserta::find($id);
+            $peserta = Peserta::findOrFail($id);
             $validator = Validator::make($request->all(), ['jenis_kelamin' => 'required', 'alamat_rumah' =>'required', 'nama_peserta' => 'required', 'asal_sekolah' => 'required', 'tgl_lahir' => 'required'], ['jenis_kelamin.required' => 'Jenis kelamin tidak boleh kosong', 'alamat_rumah.required' => 'alamat tidak boleh kosong', 'nama_peserta.required' => 'Nama peserta tidak boleh kosong', 'asal_sekolah.required' => 'asal sekolah tidak boleh kosong', 'tgl_lahir' => 'required']);
         
             if($validator->fails()) {

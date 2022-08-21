@@ -54,18 +54,18 @@
 
                                             </td>
                                             <td class="d-flex align-middle text-center text-sm">
-                                                @can('delete users')
-                                                    <form action="/hapus_peserta/{{ $peserta->id }}" method="POST">
-                                                        @csrf
-                                                        <button type="submit" class="btn btn-danger btn-sm mb-0"
-                                                            onclick="return confirm('Yakin menghapus?')">Hapus</button>
-                                                    </form>
-                                                @endcan
-                                                @can('update users')
-                                                    <a class="btn btn-primary btn-sm mb-0"
-                                                        href="/edit_peserta/{{ $peserta->id }}"
-                                                        style="margin-left: 0.5rem">Ubah</a>
-                                                @endcan
+
+                                                <form action="/hapus_peserta/{{ $peserta->id }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-danger btn-sm mb-0"
+                                                        onclick="return confirm('Yakin menghapus?')">Hapus</button>
+                                                </form>
+
+
+                                                <a class="btn btn-primary btn-sm mb-0"
+                                                    href="/edit_peserta/{{ $peserta->id }}"
+                                                    style="margin-left: 0.5rem">Ubah</a>
+
                                             </td>
                                         </tr>
                                     @endforeach
