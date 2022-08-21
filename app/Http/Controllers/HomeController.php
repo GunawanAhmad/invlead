@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Peserta;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -33,6 +34,7 @@ class HomeController extends Controller
      */
     public function dashboard()
     {
-        return view('dashboard');
+        $leaderboard = Peserta::select()->orderBy('total_nilai', 'desc')->limit(5)->get();
+        return view('dashboard', ['pesertas' => $leaderboard]);
     }
 }

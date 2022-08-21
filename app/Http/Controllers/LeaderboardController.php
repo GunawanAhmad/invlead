@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Peserta;
 use Illuminate\Http\Request;
 
 class LeaderboardController extends Controller
@@ -15,6 +16,7 @@ class LeaderboardController extends Controller
      */
     public function index()
     {
-        return view('leaderboard');
+        $leaderboard = Peserta::select()->orderBy('total_nilai', 'desc')->limit(5)->get();
+        return view('leaderboard', ['pesertas' => $leaderboard]);
     }
 }
