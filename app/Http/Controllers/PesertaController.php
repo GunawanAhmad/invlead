@@ -147,9 +147,15 @@ class PesertaController extends Controller
                 if(is_int($key)) {
                     $absensi = Absensi::where('tanggal', '=', $request->tanggal)->where('id_peserta', '=', $key)->first();
                     if($absensi == null) {
-                        Absensi::create(['tanggal' => $request->tanggal, 'id_peserta' => $key, 'status_kehadiran' => $value]);
+                        $absensi = Absensi::create(['tanggal' => $request->tanggal, 'id_peserta' => $key, 'status_kehadiran' => $value]);
                     } else {
                         $absensi->update(['status_kehadiran' => $value]);
+                    }
+
+                    if($absensi->status_kehadiran == 'hadir') {
+                        $peserta = Peserta::find($key);
+                        $total_nilai = $peserta->total_nilai + 1;
+                        $peserta->update(['total_nilai' => $total_nilai]);
                     }
                 }
             }
