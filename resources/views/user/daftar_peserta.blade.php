@@ -40,7 +40,7 @@
                                     @foreach ($pesertas as $peserta)
                                         <tr>
                                             <td>
-                                                1
+                                                {{ $loop->index + 1 }}
                                             </td>
                                             <td>
                                                 {{ $peserta->nama_peserta }}

@@ -1,4 +1,4 @@
-@include('base.start', ['path' => 'transfer', 'title' => 'Penilaian', 'breadcrumbs' => ['Penilaian']])
+@include('base.start', ['path' => 'penilaian', 'title' => 'Penilaian', 'breadcrumbs' => ['Penilaian']])
 <div class="content">
     <div class="container-fluid">
         <div class="row">
@@ -8,37 +8,24 @@
                         <h4 class="card-title ">Penilaian</h4>
                         <p class="card-category"> Penilaian Peserta Magang PT.Inovindo Digital Media</p>
                     </div>
-
                     <div class="card-body">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            @isset($tab)
-                                {{ session()->get('tab') }}
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link  {{ $tab == 'kinerja' ? 'active' : '' }}" id="home-tab"
-                                        data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab"
-                                        aria-controls="home" aria-selected="true">Kinerja</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link {{ $tab == 'kedisiplinan' ? 'active' : '' }}" id="profile-tab"
-                                        data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab"
-                                        aria-controls="profile" aria-selected="false">Kedisiplinan</button>
-                                </li>
-                            @else
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                        data-bs-target="#home" type="button" role="tab" aria-controls="home"
-                                        aria-selected="true">Kinerja</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                                        type="button" role="tab" aria-controls="profile"
-                                        aria-selected="false">Kedisiplinan</button>
-                                </li>
-                            @endisset
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link  {{ Request::get('tab') == 'kinerja' ? 'active' : '' }}"
+                                    id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                                    role="tab" aria-controls="home" aria-selected="true">Kinerja</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link {{ Request::get('tab') == 'kedisiplinan' ? 'active' : '' }}"
+                                    id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+                                    role="tab" aria-controls="profile" aria-selected="false">Kedisiplinan</button>
+                            </li>
+
                         </ul>
 
                         <div class="tab-content">
-                            <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane {{ Request::get('tab') == 'kinerja' ? 'active' : '' }}" id="home"
+                                role="tabpanel" aria-labelledby="home-tab">
                                 <table class="table">
                                     <thead class=" text-primary">
                                         <th>
@@ -107,7 +94,8 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="tab-pane {{ Request::get('tab') == 'kedisiplinan' ? 'active' : '' }}"
+                                id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <table class="table">
                                     <thead class=" text-primary">
                                         <th>
@@ -141,14 +129,14 @@
                                                     <td>
                                                         <input style="width : 2cm" class="form-control" type="number"
                                                             value="{{ $peserta->nilai_kedisiplinan_disiplin }}"
-                                                            {{-- {{ $peserta->is_nilai_kedisiplinan_finish ? 'disabled' : '' }} --}} name="nilai_kedisiplinan_disiplin"
-                                                            required>
+                                                            {{ $peserta->is_nilai_kedisiplinan_finish ? 'disabled' : '' }}
+                                                            name="nilai_kedisiplinan_disiplin" required>
                                                     </td>
                                                     <td>
                                                         <input style="width : 2cm" class="form-control" type="number"
                                                             value="{{ $peserta->nilai_kedisiplinan_sopan }}"
-                                                            {{ $peserta->is_nilai_kedisiplinan_finish ? 'disabled' : '' }}name="nilai_kedisiplinan_sopan"
-                                                            required>
+                                                            {{ $peserta->is_nilai_kedisiplinan_finish ? 'disabled ' : '' }}
+                                                            name="nilai_kedisiplinan_sopan" required>
                                                     </td>
                                                     <td>
                                                         <input style="width : 2cm" class="form-control" type="number"
@@ -161,7 +149,8 @@
                                                     </td>
                                                     <td>
                                                         <button type="submit" class="btn btn-warning"
-                                                            {{-- {{ $peserta->is_nilai_kedisiplinan_finish ? 'disabled' : '' }} --}} name="berinilai">Beri
+                                                            {{ $peserta->is_nilai_kedisiplinan_finish ? 'disabled' : '' }}
+                                                            name="berinilai">Beri
                                                             nilai</button>
                                                     </td>
                                                 </form>

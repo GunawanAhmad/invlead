@@ -36,6 +36,10 @@ Route::post('/penilaian/kedisiplinan/{id}', [App\Http\Controllers\PesertaControl
 
 Route::post('/hapus_peserta/{id}', [App\Http\Controllers\PesertaController::class, 'hapus_peserta'])->name('hapus peserta');
 
+Route::get('/absensi', [App\Http\Controllers\PesertaController::class, 'absensi_view'])->name('absensi view');
+
+Route::post('/absensi', [App\Http\Controllers\PesertaController::class, 'absensi_peserta'])->name('absensi peserta');
+
 
 Route::get('/profil', [App\Http\Controllers\UserController::class, 'my_profile'])->name('my profile');
 
@@ -58,11 +62,11 @@ Route::get('/user/list/delete/{id}', [App\Http\Controllers\UserController::class
 
 Route::get('/peserta', [App\Http\Controllers\PesertaController::class, 'get_peserta'])->name('daftar peserta');
 
-Route::get('/penilaian', [App\Http\Controllers\PesertaController::class, 'penilaian_view'])->name('penilaian');
+Route::get('/penilaian', [App\Http\Controllers\PesertaController::class, 'penilaian_view'])->defaults('tab', 'kinerja');
 
 Route::post('/transfer/store', [App\Http\Controllers\UserController::class, 'store_transfer'])->name('store transfer');
 
-Route::get('/pembayaran', [App\Http\Controllers\PesertaController::class, 'absensi_view'])->name('absensi view');
+
 
 Route::get('/pembayaran/{id}', [App\Http\Controllers\UserController::class, 'view_payment'])->name('view payment');
 

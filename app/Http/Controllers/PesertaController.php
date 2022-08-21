@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Absensi;
 use Illuminate\Http\Request;
 use App\Models\Peserta;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 
 class PesertaController extends Controller
 {
 
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    
     public function get_peserta()
     {
         $peserta = Peserta::all();
@@ -22,12 +29,18 @@ class PesertaController extends Controller
         $pesertas = Peserta::all();
         return view('penilaian', ['pesertas' => $pesertas]);
     }
-
-    public function absensi_view()
-    {
-        $merchantProducts = null;
-
-        return view('payment.list', ['merchantProducts' => $merchantProducts]);
+    
+    public function absensi_view(Request $request)
+    {   
+        if($request->has('tanggal')) {
+            $date = date($request->query('tanggal'));
+        } else {
+            $date = date('Y-m-d');
+        }
+        $pesertas = Peserta::select('pesertas.*', 'absensis.status_kehadiran')->leftJoin('absensis', function($q) use ($date) {
+            $q->from('absensis')->where('tanggal', '=', $date)  ->on('pesertas.id', '=', 'absensis.id_peserta');
+        })->get();
+        return view('absensi', ['pesertas' => $pesertas, 'tanggal' => $date]);
     }
 
     public function tambah_peserta(Request $request) {
@@ -94,7 +107,7 @@ class PesertaController extends Controller
             
             $peserta->update(['nilai_kedisiplinan_disiplin' => $request->nilai_kedisiplinan_disiplin, 'nilai_kedisiplinan_sopan' => $request->nilai_kedisiplinan_sopan, 'nilai_kedisiplinan_santun' => $request->nilai_kedisiplinan_santun, 'is_nilai_kedisiplinan_finish' => true, 'jumlah_poin_kedisiplinan' => $jumlah_poin_kedisiplinan, 'total_nilai' => $total_nilai]);
 
-            return redirect('/penilaian')->with(['tab' => 'kedisiplinan']);
+            return redirect('/penilaian?tab=kedisiplinan');
             
         } catch (\Throwable $th) {
             //throw $th;
@@ -112,12 +125,34 @@ class PesertaController extends Controller
             
             $peserta->update(['nilai_kinerja_task1' => $request->nilai_kinerja_task1, 'nilai_kinerja_task2' => $request->nilai_kinerja_task2, 'nilai_kinerja_task3' => $request->nilai_kinerja_task3, 'is_nilai_kinerja_finish' => true, 'jumlah_poin_kinerja' => $jumlah_poin_kinerja, 'total_nilai' => $total_nilai]);
 
-            return redirect('/penilaian')->with('tab', 'kinerja');
+            return redirect('/penilaian?tab=kinerja');
 
             
         } catch (\Throwable $th) {
             //throw $th;
             return redirect()->back()->withErrors(['msg' => 'something went wrong']);
         }
+    }
+
+
+    public function absensi_peserta(Request $request) {
+        try {
+            
+            foreach ($request->all() as $key => $value) {
+                if(is_int($key)) {
+                    $absensi = Absensi::where('tanggal', '=', $request->tanggal)->where('id_peserta', '=', $key)->first();
+                    if($absensi == null) {
+                        Absensi::create(['tanggal' => $request->tanggal, 'id_peserta' => $key, 'status_kehadiran' => $value]);
+                    } else {
+                        $absensi->update(['status_kehadiran' => $value]);
+                    }
+                }
+            }
+            return redirect()->back();
+
+        } catch (\Throwable $th) {
+            return redirect()->back()->withErrors('Something went wrong');
+        }
+        
     }
 }

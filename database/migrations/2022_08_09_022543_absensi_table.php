@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreign('id_peserta')->references('id')->on('pesertas');
             $table->string('tanggal');
             $table->string('status_kehadiran');
+            $table->timestamps();
 
         });
     }
