@@ -108,7 +108,11 @@ class PesertaController extends Controller
             $peserta = Peserta::findOrFail($id);
             
             $jumlah_poin_kedisiplinan = $request->nilai_kedisiplinan_disiplin + $request->nilai_kedisiplinan_sopan + $request->nilai_kedisiplinan_santun;
-            $total_nilai = $peserta->total_nilai + $jumlah_poin_kedisiplinan;
+            if($peserta->is_nilai_kedisiplinan_finish) {
+                $total_nilai = $peserta->total_nilai - $peserta->jumlah_poin_kedisiplinan +  $jumlah_poin_kedisiplinan;
+            } else {
+                $total_nilai = $peserta->total_nilai + $jumlah_poin_kedisiplinan;
+            }
             
             $peserta->update(['nilai_kedisiplinan_disiplin' => $request->nilai_kedisiplinan_disiplin, 'nilai_kedisiplinan_sopan' => $request->nilai_kedisiplinan_sopan, 'nilai_kedisiplinan_santun' => $request->nilai_kedisiplinan_santun, 'is_nilai_kedisiplinan_finish' => true, 'jumlah_poin_kedisiplinan' => $jumlah_poin_kedisiplinan, 'total_nilai' => $total_nilai]);
 
@@ -126,7 +130,11 @@ class PesertaController extends Controller
             $peserta = Peserta::findOrFail($id);
             
             $jumlah_poin_kinerja = $request->nilai_kinerja_task1 + $request->nilai_kinerja_task2 + $request->nilai_kinerja_task3;
-            $total_nilai = $peserta->total_nilai + $jumlah_poin_kinerja;
+            if($peserta->is_nilai_kinerja_finish) {
+                $total_nilai = $peserta->total_nilai - $peserta->jumlah_poin_kinerja + $jumlah_poin_kinerja;
+            } else {
+                $total_nilai = $peserta->total_nilai + $jumlah_poin_kinerja;
+            }
             
             $peserta->update(['nilai_kinerja_task1' => $request->nilai_kinerja_task1, 'nilai_kinerja_task2' => $request->nilai_kinerja_task2, 'nilai_kinerja_task3' => $request->nilai_kinerja_task3, 'is_nilai_kinerja_finish' => true, 'jumlah_poin_kinerja' => $jumlah_poin_kinerja, 'total_nilai' => $total_nilai]);
 
@@ -148,15 +156,27 @@ class PesertaController extends Controller
                     $absensi = Absensi::where('tanggal', '=', $request->tanggal)->where('id_peserta', '=', $key)->first();
                     if($absensi == null) {
                         $absensi = Absensi::create(['tanggal' => $request->tanggal, 'id_peserta' => $key, 'status_kehadiran' => $value]);
+                        if($absensi->status_kehadiran == 'hadir') {
+                            $peserta = Peserta::find($key);
+                            $total_nilai = $peserta->total_nilai + 1;
+                            $peserta->update(['total_nilai' => $total_nilai]);
+                        }
                     } else {
+                        if($absensi->status_kehadiran != 'hadir' && $value == 'hadir') {
+                            $peserta = Peserta::find($key);
+                            $total_nilai = $peserta->total_nilai + 1;
+                            $peserta->update(['total_nilai' => $total_nilai]);
+                            
+                        } else if($absensi->status_kehadiran == 'hadir' && $value != 'hadir') {
+                            
+                            $peserta = Peserta::find($key);
+                            $total_nilai = $peserta->total_nilai - 1;
+                            $peserta->update(['total_nilai' => $total_nilai]);
+                        }
                         $absensi->update(['status_kehadiran' => $value]);
                     }
 
-                    if($absensi->status_kehadiran == 'hadir') {
-                        $peserta = Peserta::find($key);
-                        $total_nilai = $peserta->total_nilai + 1;
-                        $peserta->update(['total_nilai' => $total_nilai]);
-                    }
+                    
                 }
             }
             return redirect()->back();
@@ -164,6 +184,5 @@ class PesertaController extends Controller
         } catch (\Throwable $th) {
             return redirect()->back()->withErrors('Something went wrong');
         }
-        
     }
 }

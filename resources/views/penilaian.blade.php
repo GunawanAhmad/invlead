@@ -59,23 +59,17 @@
                                                     <td>
                                                         <input style="width : 2cm" class="form-control" type="number"
                                                             value="{{ $peserta->nilai_kinerja_task1 }}"
-                                                            name="nilai_kinerja_task1"
-                                                            {{ $peserta->is_nilai_kinerja_finish ? 'disabled' : '' }}
-                                                            required>
+                                                            name="nilai_kinerja_task1" required>
                                                     </td>
                                                     <td>
                                                         <input style="width : 2cm" class="form-control" type="number"
                                                             value="{{ $peserta->nilai_kinerja_task2 }}"
-                                                            name="nilai_kinerja_task2"
-                                                            {{ $peserta->is_nilai_kinerja_finish ? 'disabled' : '' }}
-                                                            required>
+                                                            name="nilai_kinerja_task2" required>
                                                     </td>
                                                     <td>
                                                         <input style="width : 2cm" class="form-control" type="number"
                                                             value="{{ $peserta->nilai_kinerja_task3 }}"
-                                                            name="nilai_kinerja_task3"
-                                                            {{ $peserta->is_nilai_kinerja_finish ? 'disabled' : '' }}
-                                                            required>
+                                                            name="nilai_kinerja_task3" required>
                                                     </td>
                                                     <td>
                                                         {{ $peserta->jumlah_poin_kinerja }}
@@ -83,7 +77,6 @@
                                                     <td>
 
                                                         <button type="submit" class="btn btn-warning"
-                                                            {{ $peserta->is_nilai_kinerja_finish ? 'disabled' : '' }}
                                                             name="berinilai">Beri
                                                             nilai</button>
 
@@ -129,19 +122,16 @@
                                                     <td>
                                                         <input style="width : 2cm" class="form-control" type="number"
                                                             value="{{ $peserta->nilai_kedisiplinan_disiplin }}"
-                                                            {{ $peserta->is_nilai_kedisiplinan_finish ? 'disabled' : '' }}
                                                             name="nilai_kedisiplinan_disiplin" required>
                                                     </td>
                                                     <td>
                                                         <input style="width : 2cm" class="form-control" type="number"
                                                             value="{{ $peserta->nilai_kedisiplinan_sopan }}"
-                                                            {{ $peserta->is_nilai_kedisiplinan_finish ? 'disabled ' : '' }}
                                                             name="nilai_kedisiplinan_sopan" required>
                                                     </td>
                                                     <td>
                                                         <input style="width : 2cm" class="form-control" type="number"
                                                             value="{{ $peserta->nilai_kedisiplinan_santun }}"
-                                                            {{ $peserta->is_nilai_kedisiplinan_finish ? 'disabled' : '' }}
                                                             name="nilai_kedisiplinan_santun" required>
                                                     </td>
                                                     <td>
@@ -149,7 +139,6 @@
                                                     </td>
                                                     <td>
                                                         <button type="submit" class="btn btn-warning"
-                                                            {{ $peserta->is_nilai_kedisiplinan_finish ? 'disabled' : '' }}
                                                             name="berinilai">Beri
                                                             nilai</button>
                                                     </td>
